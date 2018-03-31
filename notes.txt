@@ -1,0 +1,4 @@
+Under every gif, display its rating (PG, G, so on).
+
+This data is provided by the GIPHY API.
+Only once you get images displaying with button presses should you move on to the next step.

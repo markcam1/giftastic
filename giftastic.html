@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <title>Favorite Movies</title>
-  <link rel="stylesheet" href="assets/css/reset.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="assets/javascript/giftastic.js"></script>
-  </style>
-</head>
-
+  <head>
+    <meta charset="utf-8">
+    <title>Favorite Movies</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/giftastic.js"></script>
+    </style>
+  </head>
 <body>
 
   <div class="container">
     <div class="jumbotron">
-        <h1>Cameron Gif Maker</h1>
-        <p>...</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+      <h1>Cameron Gif Maker</h1>
+      <!-- <p>...</p> -->
+      <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> -->
+    </div>
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <div id="buttons-view"></div>
       </div>
-    <!-- Rendered buttons will get dumped Here  -->
-    <div id="buttons-view"></div>
+    </div>
+    <br><br>
+    <div class="row">      
+      <div class="col-sm-12 text-center">
+        <form id="movie-form">
+          <label for="movie-input">Enter More Dances</label>
+          <input type="text" id="movie-input">
+          <input id="add-movie" type="submit" value="Go And Get It">
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <div id="pagetruck"></div>
+      </div>
+    </div>
 
-    <form id="movie-form">
-      <label for="movie-input">Add a Movie Bro</label>
-      <input type="text" id="movie-input"><br>
 
-      <!-- Button triggers new movie to be added -->
-      <input id="add-movie" type="submit" value="Add a Movie Bro">
-    </form>
 
-    <!-- Movies will get dumped here -->
-    <div id="movies-view"></div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   </div>
 </body>

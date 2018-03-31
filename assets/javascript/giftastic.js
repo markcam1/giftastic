@@ -1,12 +1,11 @@
 
-// Initial array of movies
-var movies = ["GanGangnam Style", "Electric Slide", "Cha Cha Slide", "Dancing Fool"];
+var topics = ["GanGangnam Style", "Electric Slide", "Cha Cha Slide", "Dancing Fool"];
 
 window.onload = function() {
 
   $("#add-movie").on("click", addToArray);
   $(document).on("click", ".movie", displayMovieInfo);
-  $("#movies-view").on("click", ".gif", stateMaker);
+  $("#pagetruck").on("click", ".gifbox", stateMaker);
 
   // Function for displaying movie data
   function renderButtons() {
@@ -16,7 +15,7 @@ window.onload = function() {
     $("#buttons-view").empty();
   
     // Loops through the array of movies
-    for (var i = 0; i < movies.length; i++) {
+    for (var i = 0; i < topics.length; i++) {
   
       // Then dynamicaly generates buttons for each movie in the array
       // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
@@ -24,47 +23,22 @@ window.onload = function() {
       // Adds a class of movie to our button
       a.addClass("movie");
       // Added a data-attribute
-      a.attr("data-name", movies[i]);
+      a.attr("data-name", topics[i]);
       // Provided the initial button text
-      a.text(movies[i]);
+      a.text(topics[i]);
       // Added the button to the buttons-view div
       $("#buttons-view").append(a);
     }
   }
-
-  // Calling the renderButtons function to display the intial buttons
   renderButtons();
-};
 
-
-  // This function handles events where the add movie button is clicked
-  $("#add-movie").on("click", function(event) {
-    event.preventDefault();
-    // This line of code will grab the input from the textbox
-    var movie = $("#movie-input").val().trim();
-
-    // The movie from the textbox is then added to our array
-    movies.push(movie);
-
-    // Calling renderButtons which handles the processing of our movie array
-    renderButtons();
-
-  });
-
-  
   function addToArray() {
     event.preventDefault();
-    // This line of code will grab the input from the textbox
-    var movie = $("#movie-input").val().trim();
-
-    // The movie from the textbox is then added to our array
-    movies.push(movie);
-
-    // Calling renderButtons which handles the processing of our movie array
+    var newData = $("#movie-input").val().trim();
+    topics.push(newData);
     renderButtons();
-
   };
-
+};
 
 
 // displayMovieInfo function re-renders the HTML to display the appropriate content
@@ -84,8 +58,16 @@ function displayMovieInfo() {
 
     response.data.forEach(function(gifObject) {
 
+      var newDiv = $("<div class='gifpallet'>");
+
       var imgStill = gifObject.images.fixed_height_still.url;
       var imgMove = gifObject.images.fixed_height.url;
+      var rating = gifObject.rating;
+      var title = gifObject.title;
+      var impDate = gifObject.import_datetime
+
+      var p = $("<p class='pee'>").text("Name: " + title + " | Rating: " + rating);
+      var p2 = $("<p>").text("Date: " + impDate);
 
       var showImg = $('<img>');
 
@@ -94,23 +76,24 @@ function displayMovieInfo() {
         'data-move': imgMove,
         'data-still': imgStill,
         'data-state': "still",
-        class: "gif"
+        class: "gifbox"
       });
 
-      $('#movies-view').prepend( showImg )
+
+      p.append(p2);
+      newDiv.prepend(p);
+      newDiv.prepend(showImg);
+
+
+      $('#pagetruck').prepend( newDiv )
     })
     console.log(response)
   });
-
 }
 
 function stateMaker() {
   console.log("state")
-  // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
   var state = $(this).attr("data-state");
-  // If the clicked image's state is still, update its src attribute to what its data-animate value is.
-  // Then, set the image's data-state to animate
-  // Else set src to the data-still value
   if (state === "still") {
     $(this).attr("src", $(this).attr("data-move"));
     $(this).attr("data-state", "move");
