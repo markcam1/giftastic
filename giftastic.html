@@ -13,13 +13,13 @@
 <body>
 
   <div class="container">
-    <div class="jumbotron">
-      <h1>Cameron Gif Maker</h1>
+    <div class="jumbotron text-center">
+      <h2>Cameron Gif Maker</h2>
       <!-- <p>...</p> -->
       <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> -->
     </div>
     <div class="row">
-      <div class="col-sm-12 text-center">
+      <div class="col-sm-12 text-center btn-group">
         <div id="buttons-view"></div>
       </div>
     </div>
@@ -31,11 +31,24 @@
           <input type="text" id="movie-input">
           <input id="add-movie" type="submit" value="Go And Get It">
         </form>
+        <div class="col-sm-8 col-sm-offset-2">
+          <h4>Suggestions..</h4>
+          <ul class="list-group">
+            <li class="list-group-item">Cupid Shuffle</li>
+            <li class="list-group-item">Cotton Eyed Joe</li>
+            <li class="list-group-item">YMCA</li>
+            <li class="list-group-item">Cha Cha Slide</li>
+            <li class="list-group-item">The Loco-Motion</li>
+          </ul>
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-sm-12 text-center">
-        <div id="pagetruck"></div>
+    <div class="row row-flex">
+      <div class="col-sm-12 text-center" id="favhigway">
+      </div>
+    </div>
+    <div class="row row-flex">
+      <div class="col-sm-12 text-center" id="highway">
       </div>
     </div>
 

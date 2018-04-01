@@ -1,4 +1,6 @@
-
+/* body {
+    background-image: url(../media/floor.jpg)
+} */
 
 .gifbox {
     border-style: solid;
@@ -9,4 +11,17 @@
     border-style: solid;
     border-color: green;
     border-width: 3px;
+    font-size: 8pt;
 }
+
+.flex-grow {
+    display: flex;
+    flex-wrap: wrap
+}
+
+ul.list-group li{
+    display:inline;
+    font-size: 8pt;
+}
+
+
