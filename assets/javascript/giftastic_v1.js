@@ -6,9 +6,7 @@ window.onload = function() {
   $("#add-movie").on("click", addToArray);
   $(document).on("click", ".movie", displayMovieInfo);
   $("#highway").on("click", ".gifbox", stateMaker);
-  $("#favroad").on("click", ".gifbox", stateMaker);
   $("#highway").on("click", ".btn-xs", favoritesAdder);
-  $("#favroad").on("click", ".btn-xs", favKiller);
 
   // Function for displaying movie data
   function renderButtons() {
@@ -42,61 +40,43 @@ window.onload = function() {
 
   function favoritesAdder(){
     console.log("in favs maker");
-    
-    var favBtnId = $(this).attr("data-btnid");
-    var favImgId = "#" + favBtnId;
-    var favImgProps = $(favImgId).attr('data-play', 'src');
-
-    console.log(favImgProps);
-    var favData = favImgProps[0].outerHTML;
+  
+    var favBtnId = $(this).attr("data-imgid","data-move");
+  
+    console.log(favBtnId);
   
     var favKeep = JSON.parse(localStorage.favKeep || "[]")
   
-    favKeep.push(favData)
+    favKeep.push(favBtnId)
   
     localStorage.favKeep = JSON.stringify(favKeep)
   
     loadFavsOnPage()
-  }
   
+  }
 
   function loadFavsOnPage() {
-    console.log("loader")
 
     var favKeep = JSON.parse(localStorage.favKeep || "[]")
-    $("#favroad").empty();
+
   
+    //save entire image (state) in button
+    //get image from id; or ; or add gif id to div and move div to favs
     favKeep.forEach(function(value, index, arrayV) {
-
-      console.log(value + " : " + index)
-
-      var favShow = $("<div>").append(value).attr("id", "item-" + index)
-
-      var rmvFavBtn = $("<div class='btn btn-danger btn-xs'>").text("remove");
-
-      rmvFavBtn.attr({'data-removeid': index});
-
-      favShow.append(rmvFavBtn);
-
-      $("#favroad").prepend( favShow );
+  
+      // var toDoItem = $("<p>").text(" " + value).attr("id", "item-" + index)
+  
+      // var toDoClose = $("<button>").attr("data-to-do", index)
+      // toDoClose.addClass("checkbox").text("ðŸ’ª")
+  
+      // toDoItem.prepend(toDoClose)
+  
+      // $("#to-dos").append(toDoItem)
   
     })
   }
   
   loadFavsOnPage()
-
-  function favKiller () {
-
-    var indexOfTodo = $(this).attr("data-removeid");
-
-    var favKeep = JSON.parse(localStorage.favKeep);
-    
-    favKeep.splice(indexOfTodo, 1);
-
-    localStorage.favKeep = JSON.stringify(favKeep);
-
-    loadFavsOnPage();
-  };
 
 };
 
@@ -131,20 +111,24 @@ function displayMovieInfo() {
       var p2 = $("<p>").text("Date: " + impDate);
       var showImg = $('<img>');
 
-      var addFavBtn = $("<div class='btn btn-default btn-xs'>").text("favs");
+      var addFavBtn = $("<div>").text("favs");
 
       showImg.attr({
         src: imgStill,
         'data-move': imgMove,
         'data-still': imgStill,
         'data-state': "still",
-        'data-play': "play1",
         class: "gifbox",
-        id: gifid
+        'data-imgid': gifid
       });
-
+      
       addFavBtn.attr({
-        'data-btnid': gifid
+        src: imgStill,
+        'data-move': imgMove,
+        'data-still': imgStill,
+        'data-state': "still",
+        class: "btn btn-default btn-xs",
+        'data-imgid': gifid
       });
 
       p2.append(addFavBtn);
