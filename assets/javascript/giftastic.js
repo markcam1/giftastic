@@ -72,7 +72,8 @@ window.onload = function() {
 
       var favShow = $("<div>").append(value).attr("id", "item-" + index)
 
-      var rmvFavBtn = $("<div class='btn btn-danger btn-xs'>").text("remove");
+      // var rmvFavBtn = $("<div class='btn btn-danger btn-xs'>").text("remove");
+      var rmvFavBtn = $("<br><div class='btn btn-danger btn-xs'>").text("remove");
 
       rmvFavBtn.attr({'data-removeid': index});
 
@@ -87,11 +88,11 @@ window.onload = function() {
 
   function favKiller () {
 
-    var indexOfTodo = $(this).attr("data-removeid");
+    var indexFav = $(this).attr("data-removeid");
 
     var favKeep = JSON.parse(localStorage.favKeep);
     
-    favKeep.splice(indexOfTodo, 1);
+    favKeep.splice(indexFav, 1);
 
     localStorage.favKeep = JSON.stringify(favKeep);
 
@@ -131,7 +132,19 @@ function displayMovieInfo() {
       var p2 = $("<p>").text("Date: " + impDate);
       var showImg = $('<img>');
 
-      var addFavBtn = $("<div class='btn btn-default btn-xs'>").text("favs");
+      var addFavBtn = $("<br><div class='btn btn-info btn-xs'>").text("favs");
+      var dwnBtn = $("<a>").text("Download"); 
+
+      var dwnlink1 = 'https://media.giphy.com/media/';
+      var dwnId = dwnlink1 + gifid;
+      var fullDwnLink = dwnId + '/giphy.gif';
+
+      dwnBtn.attr({
+        // 'href': imgMove,
+        // 'download': imgMove,
+        'href': fullDwnLink,
+        'download': "file.gif"
+      });
 
       showImg.attr({
         src: imgStill,
@@ -148,6 +161,7 @@ function displayMovieInfo() {
       });
 
       p2.append(addFavBtn);
+      p2.append(dwnBtn);
       p.append(p2);
       newDiv.prepend(p);
       newDiv.prepend(showImg);
