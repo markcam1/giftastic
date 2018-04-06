@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Favorite gifs</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/giftastic.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Nothing+You+Could+Do" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Bungee+Shade|Nothing+You+Could+Do" rel="stylesheet">
+    </style>
+  </head>
+<body>
+
+  <div class="container">
+    <div class="jumbotron text-center">
+      <div class=row>
+        <div class="col-sm-5">
+          <h2 id="head1">The Dancing Machine</h2>
+        </div>
+        <div class="col-sm-3">
+          <div class="embed-responsive embed-responsive-4by3 img-responsive center-block">
+            <iframe src="https://giphy.com/embed/vVzH2XY3Y0Ar6" class="giphy-embed img-responsive center-block"></iframe>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-body"> 
+              <p id="head2">
+                “Let us read, and let us dance; these two amusements will never do any harm to the world.” ― Voltaire
+              </p> 
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 text-center btn-group">
+        <div id="buttons-view"></div>
+      </div>
+    </div>
+    <br><br>
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+          <div class="panel panel-success">
+              <div class="panel-body text-center"> 
+                <p class="howto">Press the gold buttons above to see dancing gifs.</p>
+                <p class="howto">Or enter new buttons below.</p>
+              </div>
+            </div>
+      </div>
+    </div>
+    <div class="row">      
+      <div class="col-sm-12 text-center">
+        <form id="gif-form">
+          <label for="gif-input" id="enter">Enter More Dances</label>
+          <input type="text" id="gif-input">
+          <input id="add-gif" type="submit" value="Go And Get It">
+        </form>
+        <div class="col-sm-8 col-sm-offset-2" id="suggest">
+          <h4>Suggestions..</h4>
+          <ul class="list-group">
+            <li class="list-group-item">Cupid Shuffle</li>
+            <li class="list-group-item">Cotton Eyed Joe</li>
+            <li class="list-group-item">Twerk</li>
+            <li class="list-group-item">Cha Cha Slide</li>
+            <li class="list-group-item">The Loco-Motion</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row row-flex">
+      <div class="col-sm-12 text-center flex-grow" id="favroad">
+      </div>
+    </div>
+    <div class="row row-flex">
+      <div class="col-sm-12 text-center" id="highway">
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
