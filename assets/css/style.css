@@ -1,10 +1,27 @@
-/* body {
-    background-image: url(../media/floor.jpg)
-} */
+body {
+    background-image: url(../media/black.jpg)
+}
+
+.jumbotron {
+    background-image: url(../media/silver.jpg)
+}
+.jumbotron .giphy-embed {
+    width: 180px;
+    height: 240px;
+}
+
+#head1 {
+    font-family: 'Bungee Shade', cursive;
+}
+
+#head2 {
+    font-size: 14pt;
+    font-family: 'Nothing You Could Do', cursive;
+}
 
 .gifbox {
     border-style: solid;
-    border-color: aqua;
+    border-color: goldenrod;
     border-width: 3px;
 }
 .pee {
@@ -22,6 +39,25 @@
 ul.list-group li{
     display:inline;
     font-size: 8pt;
+    color: black;
 }
 
+.pone {
+    color: white;
+}
 
+#suggest {
+    color: white;
+}
+
+.gold {
+    background-color: goldenrod;
+    font-family: 'Abril Fatface', cursive;
+}
+#enter {
+    color: white;
+}
+
+.howto {
+    font-size: 8pt;
+}
