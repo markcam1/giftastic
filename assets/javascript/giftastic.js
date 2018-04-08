@@ -70,7 +70,7 @@ window.onload = function() {
 
 function displayGifs() {
   var searchTerm = $(this).attr("data-name");
-  var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&limit=3&q=";
+  var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&limit=10&q=";
   queryURL += searchTerm
 
   $.ajax({
