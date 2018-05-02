@@ -11,7 +11,13 @@ Other features include:
 
 This production employs HTML, the HTML5’s data-attributes, JavaScript/jQuery and ajax calls.
 
+---
+
 [giftastic](https://markcam1.github.io/giftastic/) - the deployed website is here.
+
+![Site Preview](https://github.com/markcam1/markcam1.github.io/blob/master/assets/images/gif.jpg)
+
+---
 
 ## Setup
 ### Prerequisites
